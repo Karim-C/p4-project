@@ -192,6 +192,8 @@ public class SamplePlayerController : OVRPlayerController
 
         bool stepLeft = false;
         bool stepRight = false;
+        bool moveUp = false;
+
         stepLeft = OVRInput.GetDown(OVRInput.Button.PrimaryShoulder) || Input.GetKeyDown(KeyCode.Q);
         stepRight = OVRInput.GetDown(OVRInput.Button.SecondaryShoulder) || Input.GetKeyDown(KeyCode.E);
 
@@ -201,6 +203,7 @@ public class SamplePlayerController : OVRPlayerController
         {
             stepLeft |= OVRInput.GetDown(OVRInput.Button.DpadLeft);
             stepRight |= OVRInput.GetDown(OVRInput.Button.DpadRight);
+            moveUp |= OVRInput.GetDown(OVRInput.Button.One);
         }
         else if ((activeController == OVRInput.Controller.LTrackedRemote)
             || (activeController == OVRInput.Controller.RTrackedRemote))
@@ -215,7 +218,15 @@ public class SamplePlayerController : OVRPlayerController
                 }
             }
         }
-        
+
+        Debug.Log("Hello");
+
+        if (moveUp)
+        {
+            Debug.Log("Move up activated");
+            transform.Translate(Vector3.up * 3);
+        }
+
         float rotateInfluence = SimulationRate_ * Time.deltaTime * RotationAmount * RotationScaleMultiplier;
 
 #if !UNITY_ANDROID 
@@ -280,6 +291,7 @@ public class SamplePlayerController : OVRPlayerController
                 euler.y += change;
             }
         }
+
 
         float moveInfluence = SimulationRate_ * Time.deltaTime * Acceleration * 0.1f * MoveScale * MoveScaleMultiplier;
 
