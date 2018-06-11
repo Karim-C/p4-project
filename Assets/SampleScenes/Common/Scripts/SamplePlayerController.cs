@@ -193,6 +193,7 @@ public class SamplePlayerController : OVRPlayerController
         bool stepLeft = false;
         bool stepRight = false;
         bool moveUp = false;
+        bool moveDown = false;
 
         stepLeft = OVRInput.GetDown(OVRInput.Button.PrimaryShoulder) || Input.GetKeyDown(KeyCode.Q);
         stepRight = OVRInput.GetDown(OVRInput.Button.SecondaryShoulder) || Input.GetKeyDown(KeyCode.E);
@@ -204,6 +205,7 @@ public class SamplePlayerController : OVRPlayerController
             stepLeft |= OVRInput.GetDown(OVRInput.Button.DpadLeft);
             stepRight |= OVRInput.GetDown(OVRInput.Button.DpadRight);
             moveUp |= OVRInput.GetDown(OVRInput.Button.One);
+            moveDown |= OVRInput.GetDown(OVRInput.Button.Two);
         }
         else if ((activeController == OVRInput.Controller.LTrackedRemote)
             || (activeController == OVRInput.Controller.RTrackedRemote))
@@ -219,12 +221,17 @@ public class SamplePlayerController : OVRPlayerController
             }
         }
 
-        Debug.Log("Hello");
-
         if (moveUp)
         {
-            Debug.Log("Move up activated");
+   
             transform.Translate(Vector3.up * 3);
+        }else if (moveDown)
+        {
+            if (transform.position.y >= 1)
+            {
+                transform.Translate(Vector3.up * -2);
+            }
+            
         }
 
         float rotateInfluence = SimulationRate_ * Time.deltaTime * RotationAmount * RotationScaleMultiplier;
