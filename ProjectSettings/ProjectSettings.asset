@@ -721,7 +721,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.1
   apiCompatibilityLevel: 2
   cloudProjectId: d3e5afe0-0178-4b5f-ba13-ca08b3b36c4e
-  projectName: 
+  projectName: Demo
   organizationId: kcis880
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
