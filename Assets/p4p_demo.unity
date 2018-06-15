@@ -3880,7 +3880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8267eb6d0f679243abfd4f693980fab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 0.8
+  Acceleration: 0.4
   Damping: 0.3
   BackAndSideDampen: 0.5
   JumpForce: 0.3
