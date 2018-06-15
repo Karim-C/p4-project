@@ -80,8 +80,10 @@ public class TextureScript : MonoBehaviour {
 		a.Apply();
 		if (GetComponent<Renderer> ()) {
 			GetComponent<Renderer> ().material.mainTexture = a;
-			AssetDatabase.CreateAsset (GetComponent<Renderer> ().material, "Assets/Materials/" + "ScaleMaterial.mat");
-		}
+			// AssetDatabase.CreateAsset (GetComponent<Renderer> ().material, "Assets/Materials/" + "ScaleMaterial.mat");
+            GetComponent<Renderer>().material = (UnityEngine.Material)Resources.Load("Assets/Materials/" + "ScaleMaterial.mat");
+
+        }
 
 		//for Unity UI need a sprite instead of texture (size needs to match texture2D)
 		Sprite mySprite = Sprite.Create(a,new Rect(0,0,NuCol,height),new Vector2(0,0),40);
