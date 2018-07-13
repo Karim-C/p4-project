@@ -1640,6 +1640,19 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 415952, guid: c8515ebee271c0649b9db1321f3026a4, type: 2}
   m_PrefabInternal: {fileID: 69165583}
+--- !u!114 &366603066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 366603064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4637c81689b13c4449de9ec913d4edad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayInterval: 0.15
+  _playerObject: {fileID: 0}
 --- !u!114 &366603067 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11406422, guid: c8515ebee271c0649b9db1321f3026a4,
@@ -1657,13 +1670,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4637c81689b13c4449de9ec913d4edad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delayInterval: 0.15
+  _playerObject: {fileID: 1948716102}
 --- !u!114 &366603069
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 366603064}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e98e641d160144e87a3d33fcdb893a02, type: 3}
   m_Name: 
@@ -1672,7 +1687,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 366603068}
-        m_MethodName: printMessageActivated
+        m_MethodName: StartPlayerMovement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1688,11 +1703,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 366603068}
-        m_MethodName: MovePlayer
-        m_Mode: 2
+        m_MethodName: StopPlayerMovement
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1948716102}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1701,14 +1716,14 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   Period: 0.1
-  HandModel: {fileID: 366603067}
-  Thumb: 2
+  HandModel: {fileID: 0}
+  Thumb: 1
   Index: 0
-  Middle: 2
-  Ring: 2
-  Pinky: 2
-  MinimumExtendedCount: 4
-  MaximumExtendedCount: 4
+  Middle: 1
+  Ring: 1
+  Pinky: 1
+  MinimumExtendedCount: 1
+  MaximumExtendedCount: 1
   ShowGizmos: 1
 --- !u!1 &424511314
 GameObject:
