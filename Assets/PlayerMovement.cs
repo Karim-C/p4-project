@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private int movementVector = 2;
     public float delayInterval = .15f; // seconds
     public GameObject _playerObject;
+    public static bool movementStart = false;
 
     private IEnumerator _spawnCoroutine;
 
@@ -28,12 +29,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void StartPlayerMovement()
     {
-        StartCoroutine(_spawnCoroutine);
+       // StartCoroutine(_spawnCoroutine);
+        movementStart = true;
     }
 
     public void StopPlayerMovement()
     {
-        StopAllCoroutines();
+       // StopAllCoroutines();
+        movementStart = false;
     }
 
     private void MovePlayer()

@@ -201,7 +201,7 @@ public class SamplePlayerController : OVRPlayerController
 
         OVRInput.Controller activeController = OVRInput.GetActiveController();
         if ((activeController == OVRInput.Controller.Touchpad)
-            || (activeController == OVRInput.Controller.Remote))
+            || (activeController == OVRInput.Controller.Remote) )
         {
             stepLeft |= OVRInput.GetDown(OVRInput.Button.DpadLeft);
             stepRight |= OVRInput.GetDown(OVRInput.Button.DpadRight);
@@ -343,6 +343,12 @@ public class SamplePlayerController : OVRPlayerController
             leftAxisX = 1;
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             leftAxisY = -1;
+
+        // checks for forward movement gesture
+        if (PlayerMovement.movementStart)
+        {
+            leftAxisY = 1;
+        }
 
         if (activeController == OVRInput.Controller.Remote)
         {
