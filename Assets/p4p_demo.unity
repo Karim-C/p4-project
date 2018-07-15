@@ -1651,7 +1651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4637c81689b13c4449de9ec913d4edad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayInterval: 0.15
+  delayInterval: 0
   _playerObject: {fileID: 0}
 --- !u!114 &366603067 stripped
 MonoBehaviour:
@@ -1716,7 +1716,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   Period: 0.1
-  HandModel: {fileID: 0}
+  HandModel: {fileID: 366603067}
   Thumb: 1
   Index: 0
   Middle: 1

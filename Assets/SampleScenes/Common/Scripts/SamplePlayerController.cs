@@ -51,7 +51,8 @@ public class SamplePlayerController : OVRPlayerController
     bool animating;
 
     void Awake()
-    { 
+    {
+        Debug.Log("Awake SPC");
         Controller = gameObject.GetComponent<CharacterController>();
 
         if (Controller == null)
@@ -204,6 +205,7 @@ public class SamplePlayerController : OVRPlayerController
         {
             stepLeft |= OVRInput.GetDown(OVRInput.Button.DpadLeft);
             stepRight |= OVRInput.GetDown(OVRInput.Button.DpadRight);
+            // addition to move up floors
             moveUp |= OVRInput.GetDown(OVRInput.Button.One);
             moveDown |= OVRInput.GetDown(OVRInput.Button.Two);
         }
@@ -221,6 +223,7 @@ public class SamplePlayerController : OVRPlayerController
             }
         }
 
+        // addition to move up floors
         if (moveUp)
         {
    
