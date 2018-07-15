@@ -8,9 +8,11 @@ public class PlayerMovement : MonoBehaviour
     private int movementVector = 2;
     public float delayInterval = .15f; // seconds
     public GameObject _playerObject;
-    public static bool movementStart = false;
+    public static bool forwardMovementStart = false;
+    public static bool backwardMovementStart = false;
 
     private IEnumerator _spawnCoroutine;
+
 
     void Awake()
     {
@@ -27,16 +29,26 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void StartPlayerMovement()
+    public void StartPlayerForwardMovement()
     {
        // StartCoroutine(_spawnCoroutine);
-        movementStart = true;
+        forwardMovementStart = true;
     }
 
-    public void StopPlayerMovement()
+    public void StopPlayerForwardMovement()
     {
        // StopAllCoroutines();
-        movementStart = false;
+        forwardMovementStart = false;
+    }
+
+    public void StartPlayerBackwardMovement()
+    {
+        backwardMovementStart = true;
+    }
+
+    public void StopPlayerBackwardMovement()
+    {
+        backwardMovementStart = false;
     }
 
     private void MovePlayer()

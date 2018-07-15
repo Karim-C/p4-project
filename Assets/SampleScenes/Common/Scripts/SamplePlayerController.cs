@@ -345,9 +345,15 @@ public class SamplePlayerController : OVRPlayerController
             leftAxisY = -1;
 
         // checks for forward movement gesture
-        if (PlayerMovement.movementStart)
+        if (PlayerMovement.forwardMovementStart)
         {
             leftAxisY = 1;
+        }
+
+        // checks for backward movement gesture
+        if (PlayerMovement.backwardMovementStart)
+        {
+            leftAxisY = -1;
         }
 
         if (activeController == OVRInput.Controller.Remote)
