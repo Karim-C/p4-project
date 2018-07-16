@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator _spawnCoroutine;
 
+    private static bool moveUp;
+    private static bool moveDown;
 
     void Awake()
     {
@@ -49,6 +51,35 @@ public class PlayerMovement : MonoBehaviour
     public void StopPlayerBackwardMovement()
     {
         backwardMovementStart = false;
+    }
+
+    public bool CheckIfMoveUpIsActive()
+    {
+        
+        bool temp = moveUp;
+        moveUp = false;
+        return temp;
+
+    }
+
+    public void MovePlayerUp()
+    {
+        Debug.Log("Move Up requested");
+        moveUp = true;
+    }
+
+    public void MovePlayerDown()
+    {
+        Debug.Log("Move down requested");
+        moveDown = true;
+    }
+
+    public bool CheckIfMoveDownIsActive()
+    {
+
+        bool temp = moveDown;
+        moveDown = false;
+        return temp;
     }
 
     private void MovePlayer()

@@ -224,11 +224,12 @@ public class SamplePlayerController : OVRPlayerController
         }
 
         // addition to move up floors
-        if (moveUp)
+        PlayerMovement playerMovement = new PlayerMovement();
+        if (moveUp || playerMovement.CheckIfMoveUpIsActive())
         {
    
             transform.Translate(Vector3.up * 3);
-        }else if (moveDown)
+        }else if (moveDown || playerMovement.CheckIfMoveDownIsActive())
         {
             if (transform.position.y >= 1)
             {
