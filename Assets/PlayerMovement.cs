@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject _playerObject;
     public static bool forwardMovementStart = false;
     public static bool backwardMovementStart = false;
+    public static bool sprintForwardMovementStart = false;
 
     private IEnumerator _spawnCoroutine;
 
@@ -43,6 +44,16 @@ public class PlayerMovement : MonoBehaviour
     {
        // StopAllCoroutines();
         forwardMovementStart = false;
+    }
+
+    public void StartPlayerForwardSprintMovement()
+    {
+        sprintForwardMovementStart = true;
+    }
+
+    public void StopPlayerForwardSprintMovement()
+    {
+        sprintForwardMovementStart = false;
     }
 
     public void StartPlayerBackwardMovement()
