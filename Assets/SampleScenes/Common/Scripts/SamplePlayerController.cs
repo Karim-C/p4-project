@@ -231,6 +231,7 @@ public class SamplePlayerController : OVRPlayerController
             transform.Translate(Vector3.up * 3);
         }else if (moveDown || playerMovement.CheckIfMoveDownIsActive())
         {
+
             if (transform.position.y >= 1)
             {
                 transform.Translate(Vector3.up * -2);
@@ -274,6 +275,7 @@ public class SamplePlayerController : OVRPlayerController
             
         if (rotationAnimation > 0 && animating)
         {
+
             float speed = Mathf.Max(rotationAnimation, 3);
 
             float diff = AngleDifference(targetYaw, euler.y);
@@ -289,19 +291,25 @@ public class SamplePlayerController : OVRPlayerController
         }
         if (stepLeft ^ stepRight)
         {
+
             float change = stepRight ? RotationRatchet : - RotationRatchet;
 
             if (rotationAnimation > 0)
             {
+
+
                 targetYaw = (euler.y + change)%360;
                 animating = true;
                 // animationStartAngle = euler.y;
             }
             else
             {
+
                 euler.y += change;
             }
         }
+
+
 
 
         float moveInfluence = SimulationRate_ * Time.deltaTime * Acceleration * 0.1f * MoveScale * MoveScaleMultiplier;
@@ -363,6 +371,16 @@ public class SamplePlayerController : OVRPlayerController
                 leftAxisY = 1;
             else if (OVRInput.Get(OVRInput.Button.DpadDown))
                 leftAxisY = -1;
+        }
+        
+        // rotation via gestures
+        if (PlayerMovement.rotatePlayerLeft)
+        {
+            euler.y += -1.0f;
+        }
+        else if (PlayerMovement.rotatePlayerRight)
+        {
+            euler.y += 1.0f;
         }
 
         if (leftAxisY > 0.0f)

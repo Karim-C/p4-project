@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
     private static bool moveUp;
     private static bool moveDown;
+    public static bool rotatePlayerLeft;
+    public static bool rotatePlayerRight;
 
     void Awake()
     {
@@ -80,6 +82,26 @@ public class PlayerMovement : MonoBehaviour
         bool temp = moveDown;
         moveDown = false;
         return temp;
+    }
+
+    public void StartRotatePlayerLeft()
+    {
+        rotatePlayerLeft = true;
+    }
+
+    public void StartRotatePlayerRight()
+    {
+        rotatePlayerRight = true;
+    }
+
+    public void StopRotatePlayerRight()
+    {
+        rotatePlayerRight = false;
+    }
+
+    public void StopRotatePlayerLeft()
+    {
+        rotatePlayerLeft = false;
     }
 
     private void MovePlayer()
