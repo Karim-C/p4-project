@@ -365,6 +365,11 @@ public class SamplePlayerController : OVRPlayerController
             leftAxisY = -1;
         }
 
+        if (PlayerMovement.sprintForwardMovementStart)
+        {
+            leftAxisY = 2;
+        }
+
         if (activeController == OVRInput.Controller.Remote)
         {
             if (OVRInput.Get(OVRInput.Button.DpadUp))
