@@ -22,7 +22,7 @@ public class SpeedController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Debug.Log("" + hoverItemDataSlider.Value);
-        Debug.Log("" + samplePlayerController.Acceleration);
+        //Debug.Log("" + samplePlayerController.Acceleration);
         samplePlayerController.Acceleration = hoverItemDataSlider.Value;
     }
 

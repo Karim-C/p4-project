@@ -77,13 +77,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void MovePlayerUp()
     {
-        Debug.Log("Move Up requested");
+       // Debug.Log("Move Up requested");
         moveUp = true;
     }
 
     public void MovePlayerDown()
     {
-        Debug.Log("Move down requested");
+       // Debug.Log("Move down requested");
         moveDown = true;
     }
 
