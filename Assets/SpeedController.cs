@@ -11,6 +11,8 @@ public class SpeedController : MonoBehaviour {
     private HoverItemDataSlider hoverItemDataSlider;
     private SamplePlayerController samplePlayerController;
 
+    public float initialValue = 0.3f;
+
     // Use this for initialization
     void Start () {
         hoverItemDataSlider = slider.GetComponent<HoverItemDataSlider>();
@@ -28,6 +30,6 @@ public class SpeedController : MonoBehaviour {
 
     public void ResetPlayerMovementSpeed()
     {
-        hoverItemDataSlider.Value = 0.3f;
+        hoverItemDataSlider.Value = initialValue;
     }
 }
