@@ -11,7 +11,7 @@ public class SpeedController : MonoBehaviour {
     private HoverItemDataSlider hoverItemDataSlider;
     private SamplePlayerController samplePlayerController;
 
-    public float initialValue = 0.3f;
+    public float initialValue;
 
     // Use this for initialization
     void Start () {
@@ -25,7 +25,7 @@ public class SpeedController : MonoBehaviour {
 	void Update () {
         //Debug.Log("" + hoverItemDataSlider.Value);
         //Debug.Log("" + samplePlayerController.Acceleration);
-        samplePlayerController.Acceleration = hoverItemDataSlider.Value;
+        samplePlayerController.Acceleration = hoverItemDataSlider.Value / 3.0f;
     }
 
     public void ResetPlayerMovementSpeed()
