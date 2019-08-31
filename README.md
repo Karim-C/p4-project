@@ -2,6 +2,12 @@
 
 This unity application was created in order to research effective gestures to navigate a 3D architectural model. Please refer to the "Gesture_research_overview.pdf" file to get a summary.
 
+<object data="https://github.com/Karim-C/p4-project/blob/main/Gesture_research_overview.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="https://github.com/Karim-C/p4-project/blob/main/Gesture_research_overview.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://yoursite.com/the.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
 
 ### Run instructions
 
